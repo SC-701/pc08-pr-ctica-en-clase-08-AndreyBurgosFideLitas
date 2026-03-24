@@ -1,0 +1,98 @@
+﻿@page "{id:guid}"
+@model Web.Pages.Productos.DetalleModel
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body p-4">
+
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-primary">Detalle del producto</h2>
+                        <p class="text-muted mb-0">Información completa del producto seleccionado</p>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Nombre</label>
+                            <div class="form-control bg-light rounded-3">
+                                @Model.Producto.Nombre
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Precio</label>
+                            <div class="form-control bg-light rounded-3 text-success fw-bold">
+                                ₡ @Model.Producto.Precio
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Precio en USD</label>
+                            <div class="form-control bg-light rounded-3 text-primary fw-bold">
+                                $ @Model.Producto.PrecioUSD
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Stock</label>
+                            <div class="form-control bg-light rounded-3">
+                                @Model.Producto.Stock
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label fw-semibold">Descripción</label>
+                            <div class="form-control bg-light rounded-3" style="min-height: 90px;">
+                                @Model.Producto.Descripcion
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label fw-semibold">Código de Barras</label>
+                            <div class="form-control bg-light rounded-3">
+                                @Model.Producto.CodigoBarras
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Subcategoría</label>
+                            <div class="form-control bg-light rounded-3">
+                                @Model.Producto.SubCategoria
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Categoría</label>
+                            <div class="form-control bg-light rounded-3">
+                                @Model.Producto.Categoria
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label fw-semibold">Id</label>
+                            <div class="form-control bg-light rounded-3">
+                                @Model.Producto.Id
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-2 mt-4">
+                        <a asp-page="./Index" class="btn btn-secondary rounded-pill px-4">
+                            Volver
+                        </a>
+
+                        <a asp-page="./Editar" asp-route-id="@Model.Producto.Id" class="btn btn-primary rounded-pill px-4">
+                            Editar
+                        </a>
+
+                        <a asp-page="./Eliminar" asp-route-id="@Model.Producto.Id" class="btn btn-outline-danger rounded-pill px-4">
+                            Eliminar
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

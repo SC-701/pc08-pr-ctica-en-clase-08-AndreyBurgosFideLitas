@@ -1,0 +1,65 @@
+﻿@page "{id:guid}"
+@model Web.Pages.Productos.EliminarModel
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body p-4">
+
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-danger">Eliminar producto</h2>
+                        <p class="text-muted mb-0">Confirma si deseas eliminar este producto</p>
+                    </div>
+
+                    <form method="post">
+                        <input type="hidden" asp-for="Producto.Id" />
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="alert alert-warning rounded-4">
+                            Esta acción eliminará el producto de forma permanente.
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Nombre</label>
+                                <input asp-for="Producto.Nombre" class="form-control rounded-3" readonly />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Precio</label>
+                                <input asp-for="Producto.Precio" class="form-control rounded-3" readonly />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Stock</label>
+                                <input asp-for="Producto.Stock" class="form-control rounded-3" readonly />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Código de barras</label>
+                                <input asp-for="Producto.CodigoBarras" class="form-control rounded-3" readonly />
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label fw-semibold">Descripción</label>
+                                <textarea asp-for="Producto.Descripcion" class="form-control rounded-3" rows="3" readonly></textarea>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-2 mt-4">
+                            <a asp-page="./Index" class="btn btn-secondary rounded-pill px-4">
+                                Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-danger rounded-pill px-4">
+                                Eliminar
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
